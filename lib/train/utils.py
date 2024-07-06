@@ -149,7 +149,7 @@ def save_checkpoint(model, optimizer, learning_rate, iteration, checkpoint_path)
         {
             "model": state_dict,
             "iteration": iteration,
-            "optimizer": optimizer.DiffGrad(),
+            "optimizer": optimizer.state_dict(),
             "learning_rate": learning_rate,
         },
         checkpoint_path,
@@ -175,7 +175,7 @@ def save_checkpoint_d(combd, sbd, optimizer, learning_rate, iteration, checkpoin
             "combd": state_dict_combd,
             "sbd": state_dict_sbd,
             "iteration": iteration,
-            "optimizer": optimizer.DiffGrad(),
+            "optimizer": optimizer.state_dict(),
             "learning_rate": learning_rate,
         },
         checkpoint_path,
