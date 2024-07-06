@@ -8,7 +8,7 @@ import subprocess
 import numpy as np
 from scipy.io.wavfile import read
 import torch
-
+import diffGrad
 MATPLOTLIB_FLAG = False
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
@@ -149,7 +149,7 @@ def save_checkpoint(model, optimizer, learning_rate, iteration, checkpoint_path)
         {
             "model": state_dict,
             "iteration": iteration,
-            "optimizer": optimizer.state_dict(),
+            "optimizer": diffGrad.DiffGrad.state_dict(),
             "learning_rate": learning_rate,
         },
         checkpoint_path,
