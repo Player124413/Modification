@@ -1710,7 +1710,7 @@ with gr.Blocks(title="Project") as app:
                 exp_dir1 = gr.Textbox(label=i18n("输入实验名"), value="mi-test")
                 sr2 = gr.Radio(
                     label=i18n("目标采样率"),
-                    choices=["40k"],
+                    choices=["32k", "40k", "48k"],
                     value="40k",
                     interactive=True,
                 )
@@ -1822,7 +1822,7 @@ with gr.Blocks(title="Project") as app:
                     )
                     total_epoch11 = gr.Slider(
                         minimum=0,
-                        maximum=1000,
+                        maximum=10000000000000,
                         step=1,
                         label=i18n("总训练轮数total_epoch"),
                         value=300,
